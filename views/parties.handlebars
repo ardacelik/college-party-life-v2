@@ -1,0 +1,21 @@
+<section>
+  <div class="container">
+    <h1 class="text-center">All Parties</h1>
+
+    {{#each parties}}
+      <div class="card m-3">
+      <div class="card-header">{{title}}</div>
+        <p class="card-text m-2">{{details}}</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Organizer: {{organizer}}</li>
+      </ul>
+      <a href="mailto:{{contact_info}}" class="btn btn-primary m-2">Contact</a>
+      <small class="m-2 text-center">Tags: <span>{{tags}}</span></small>
+    </div>
+
+    {{else}}
+      <p>No parties available</p>
+    {{/each}}
+  </div>
+
+</section>
