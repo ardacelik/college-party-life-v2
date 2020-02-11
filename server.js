@@ -22,8 +22,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Home route
 app.get("/", (req, res) => res.render("index", { layout: "landing" }));
 
-// Party routes
+// Routes
 app.use("/parties", require("./routes/parties"));
+app.use("/contact", require("./routes/contact"));
 
 const PORT = process.env.PORT || 5000;
 

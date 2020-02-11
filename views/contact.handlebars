@@ -1,0 +1,27 @@
+<section>
+    <div class="container">
+      <h1>Reserve Your Spot!</h1>
+      {{msg}}
+      {{#each errors}}
+        <div class="alert alert-danger">
+          <p>{{text}}</p>
+        </div>
+      {{/each}}
+      <form action="/contact" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" class="form-control" maxlength="100">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="cell">Phone Number</label>
+          <input type="text" name="cell" class="form-control" placeholder="123-1111111">
+        </div>
+        
+        <input type="submit" value="Reserve My Spot" class="btn btn-reverse">
+      </form>
+    </div>
+</section>
