@@ -59,9 +59,12 @@ router.post("/add", async (req, res) => {
     tags = tags.toLowerCase().replace(/, /g, ", ");
 
     try {
-      const party = await Party.create(req.body);
+      const party = await Party.create(req.body).then(party =>
+        res.redirect("/parties")
+      );
     } catch (err) {
       res.status(400).json({ success: false });
+      console.log(err);
     }
   }
 });
